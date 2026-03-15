@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import ConstellationBackground from "@/components/ConstellationBackground";
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
@@ -390,11 +391,14 @@ function FinalCtaSection() {
 
 export default function HomePage() {
   return (
-    <main>
-      <HeroSection />
-      <InstructorSection />
-      <SyllabusSection />
-      <FinalCtaSection />
-    </main>
+    <>
+      <ConstellationBackground />
+      <main>
+        <HeroSection />
+        <InstructorSection />
+        <SyllabusSection />
+        <FinalCtaSection />
+      </main>
+    </>
   );
 }
