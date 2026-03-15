@@ -28,7 +28,8 @@ export default async function OgImage() {
         }}
       >
         <img
-          src="http://localhost:3000/hero.jpg" // ← replace with your real domain on deploy
+          // src="http://localhost:3000/hero.jpg" // ← replace with your real domain on deploy
+          src="https://cursoastrologiacrista.vercel.app/hero.jpg" // ← replace with your real domain on deploy
           style={{
             width: "1200px",
             height: "1322px", // proportional height: 3561 * (1200 / 2481)
