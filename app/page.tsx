@@ -1,27 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   title: "Curso de Astrologia Cristã",
-  description: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
+  description: "Descubra como os astros revelam o plano de Deus para a sua vida",
 };
 
 // ─── COURSE DATA ──────────────────────────────────────────────────────────────
 
+const courseInfoSales = {
+  title: "Curso de Astrologia Cristã",
+  subtitle: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
+  ctaLabel: "Faça a sua inscrição",
+  ctaUrl: "https://sua-pagina-de-vendas.com", // ← replace with Hotmart URL when ready
+};
+
 const courseInfo = {
   title: "Curso de Astrologia Cristã",
   subtitle: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
-  ctaLabel: "Faça sua inscrição",
-  ctaUrl: "https://sua-pagina-de-vendas.com", // ← replace with real URL
+  ctaLabel: "Entre no grupo do WhatsApp",
+  ctaUrl: "https://chat.whatsapp.com/IbIeq2g2Mc74N40XDYKWku?mode=gi_t",
 };
 
 const instructor = {
   name: "Lucas Zaranza",
   photoUrl: "/instructor.jpg", // ← place photo at /public/instructor.jpg
-  bio: `Sou Lucas Zaranza, programador, músico e católico que passou anos evitando a Astrologia por acreditar que ela e a fé não podiam coexistir. Foi só em 2021, ao ter contato com uma abordagem intelectualmente séria do tema, que percebi que o problema nunca foi a Astrologia em si, foi a forma como ela foi distorcida e popularizada. Em quase cinco anos como astrólogo, atendi pessoas de todo o Brasil e vi de perto como esse sistema pode ajudar alguém a se entender melhor, e a enxergar com mais clareza o que Deus inscreveu na Criação através dos planetas, signos e estrelas.
-
+  bio: `Sou Lucas Zaranza, programador que desenvolveu o próprio site de Astrologia, o Zazastro (zazastro.com.br), e músico por hobby. Católico de berço que passou anos evitando a Astrologia por acreditar que ela e a fé cristã eram incompatíveis. Foi só em 2021, ao ter contato com uma abordagem intelectualmente séria do tema, que percebi que o problema nunca foi a Astrologia em si, foi a forma como ela foi distorcida e popularizada. Em quase cinco anos como astrólogo, atendi pessoas de todo o Brasil e vi de perto como esse sistema pode ajudar alguém a se entender melhor, e a enxergar com mais clareza o que Deus inscreveu na Criação através dos planetas, signos e estrelas.
 
 Este curso nasceu da necessidade de um espaço sério, seguro e aprofundado onde cristãos possam finalmente entender o que é a Astrologia de verdade: sem charlatanismo, sem esoterismo vazio, e sem precisar abrir mão da fé. Se você tem curiosidade sobre o tema, este é o lugar certo.`,
 };
@@ -29,39 +36,39 @@ Este curso nasceu da necessidade de um espaço sério, seguro e aprofundado onde
 const modules = [
   {
     number: "01",
-    title: "Título do Módulo 1",
+    title: "Introdução e Conceitos Fundamentais",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "O módulo mais denso do curso. De onde vem a Astrologia e o que ela realmente é? Partimos da experiência originária do homem diante do cosmos para construir uma base sólida: a hierarquia das causas, o papel dos símbolos celestes e o que a modernidade distorceu ao tentar explicar o fenômeno astrológico pelos seus próprios termos.",
   },
   {
     number: "02",
-    title: "Título do Módulo 2",
+    title: "Mecânica Celeste",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "Entenda o modelo cosmológico das esferas, os sete planetas tradicionais, o Zodíaco, as 12 casas, as estrelas fixas e os aspectos. Uma imersão visual e conceitual na arquitetura do céu, com recursos em 2D e 3D para tornar o abstrato concreto.",
   },
   {
     number: "03",
-    title: "Título do Módulo 3",
+    title: "Astrologia e Igreja Católica",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "O ponto nevrálgico do curso. Aqui você vai entender o que o Catecismo realmente diz, o que santos e papas pensavam sobre a Astrologia, o que os Concílios condenaram e o que não condenaram, e por que tanta confusão ainda persiste nos meios católicos.",
   },
   {
     number: "04",
-    title: "Título do Módulo 4",
+    title: "Astrologia na Prática",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "Saímos da teoria e entramos na leitura real de mapas. Exemplos concretos de Astrologia Horária e a análise do mapa natal de um santo muito querido nos dias atuais mostram como esse conhecimento funciona quando aplicado com seriedade e critério.",
   },
   {
     number: "05",
-    title: "Título do Módulo 5",
+    title: "Colhendo os Frutos da Astrologia",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "O que você faz com o que aprendeu? Este módulo explora as vias que a Astrologia abre: autoconhecimento, crescimento intelectual, amadurecimento humano, libertação do cientificismo e, no limite, uma forma de se aproximar mais de Deus.",
   },
   {
     number: "06",
-    title: "Título do Módulo 6",
+    title: "Conclusão e Considerações Pessoais",
     description:
-      "Breve descrição do que será abordado neste módulo. Explique os principais temas e o que o aluno vai aprender.",
+      "A Astrologia é tão perigosa assim? Para quem ela é, e para quem ela não é? O curso encerra com honestidade: sem promessas exageradas, sem missão salvacionista, mas com a clareza de quem passou anos estudando e acredita no valor do que ensina.",
   },
 ];
 
@@ -81,7 +88,11 @@ interface ModuleCardProps {
 
 // ─── SHARED COMPONENTS ────────────────────────────────────────────────────────
 
-function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
+// ─── CTA BUTTON (SALES) ───────────────────────────────────────────────────────
+// Kept for when the Hotmart sales page is ready. Swap CtaButton for this one
+// and revert ctaUrl / ctaLabel in courseInfo.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function CtaButtonSales({ label, href, size = "md" }: CtaButtonProps) {
   const baseClasses =
     "inline-flex items-center gap-2 bg-linear-to-br from-[#c9a84c] to-[#e8c96a] text-[#060d1c] font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.4)] hover:brightness-105";
 
@@ -91,12 +102,47 @@ function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
   return (
     <a href={href} className={`${baseClasses} ${sizeClasses} group`}>
       {label}
-      <span
+      <ChevronRight
+        size={18}
         className="transition-transform duration-300 group-hover:translate-x-1"
         aria-hidden="true"
+      />
+    </a>
+  );
+}
+
+// ─── CTA BUTTON (WHATSAPP) ────────────────────────────────────────────────────
+
+function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
+  // ── Sales page button (restore when Hotmart link is ready) ────────────────
+  // const baseClasses =
+  //   "inline-flex items-center gap-2 bg-linear-to-br from-[#c9a84c] to-[#e8c96a] text-[#060d1c] font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.4)] hover:brightness-105";
+
+  // ── WhatsApp group button (temporary, while course is not live) ───────────
+  const baseClasses =
+    "inline-flex items-center justify-center text-center gap-2 w-full sm:w-auto bg-[#25d366] text-white font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(37,211,102,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(37,211,102,0.45)] hover:brightness-105";
+
+  const sizeClasses =
+    size === "lg" ? "text-[0.9rem] px-10 py-4" : "text-[0.85rem] px-8 py-3.5";
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${sizeClasses} group`}>
+      {/* WhatsApp official SVG icon */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-[1.1em] w-[1.1em] shrink-0"
+        aria-hidden="true"
       >
-        →
-      </span>
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+      {label}
+      <ChevronRight
+        size={18}
+        className="transition-transform duration-300 group-hover:translate-x-1"
+        aria-hidden="true"
+      />
     </a>
   );
 }
@@ -113,7 +159,7 @@ function HeroSection() {
       {/* ── MOBILE: image fills width, text overlaid at the bottom ─────────── */}
       <div className="relative md:hidden">
         {/* Portrait image — full width, natural aspect ratio, no crop */}
-        <div className="relative aspect-[2481/3561] w-full">
+        <div className="relative aspect-2481/3561 w-full">
           <Image
             src="/hero.jpg"
             alt="Curso de Astrologia Cristã"
@@ -167,7 +213,7 @@ function HeroSection() {
             the image while keeping its left-anchored horizontal position.      */}
         {/* overflow-hidden clips the 120% tall inner div, preventing bleed into the next section */}
         <div className="relative h-full overflow-hidden">
-          <div className="relative h-[120%] bottom-30">
+          <div className="relative h-[120%] bottom-36">
             <Image
               src="/hero.jpg"
               alt="Curso de Astrologia Cristã"
@@ -199,20 +245,20 @@ function InstructorSection() {
       id="instructor"
       className="border-t border-[#c9a84c]/10 bg-linear-to-b from-[#080e1f] to-[#0d1630] py-[clamp(4rem,8vw,8rem)]"
     >
-      <div className="mx-auto max-w-[1100px] px-6 md:px-12">
+      <div className="mx-auto max-w-275] px-6 md:px-12">
         <div className="grid items-center gap-10 grid-cols-1 md:grid-cols-[1fr_1.6fr] md:gap-20">
 
           {/* Photo */}
-          <div className="relative mx-auto w-full max-w-[260px] aspect-square md:aspect-[3/4] md:max-w-[360px]">
-            <div className="absolute -inset-2 rounded-[6px] border border-[rgba(201,168,76,0.25)]" />
+          <div className="relative mx-auto w-full max-w-65 aspect-square md:aspect-3/4 md:max-w-90">
+            <div className="absolute -inset-2 rounded-md border border-[rgba(201,168,76,0.25)]" />
             <Image
               src={instructor.photoUrl}
               alt={instructor.name}
               fill
               sizes="(max-width: 768px) 260px, 360px"
-              className="relative z-10 rounded-[4px] object-cover object-top"
+              className="relative z-10 rounded-sm object-cover object-top"
+              unoptimized
             />
-            <div className="absolute -bottom-5 left-1/2 z-0 h-14 w-[70%] -translate-x-1/2 rounded-full bg-[#c9a84c] opacity-[0.18] blur-[32px]" />
           </div>
 
           {/* Text */}
@@ -224,11 +270,31 @@ function InstructorSection() {
               {instructor.name}
             </h2>
             <div className="mb-6 h-px w-12 bg-[#c9a84c] opacity-60" />
-            {bioParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-4 text-[0.97rem] text-[#e8e4d8]/75">
-                {paragraph}
-              </p>
-            ))}
+            {bioParagraphs.map((paragraph, index) => {
+              // Render the first paragraph with the Zazastro link inline
+              if (index === 0) {
+                const [before, after] = paragraph.split("zazastro.com.br), ");
+                return (
+                  <p key={index} className="mb-4 text-[0.97rem] text-[#e8e4d8]/75">
+                    {before}
+                    <a
+                      href="https://www.zazastro.com.br/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#c9a84c] underline underline-offset-2 hover:text-[#e8c96a] transition-colors duration-200"
+                    >
+                      zazastro.com.br
+                    </a>
+                    ), {after}
+                  </p>
+                );
+              }
+              return (
+                <p key={index} className="mb-4 text-[0.97rem] text-[#e8e4d8]/75">
+                  {paragraph}
+                </p>
+              );
+            })}
           </div>
 
         </div>
@@ -241,7 +307,7 @@ function InstructorSection() {
 
 function ModuleCard({ number, title, description }: ModuleCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-[6px] border border-[rgba(201,168,76,0.12)] bg-[#0d1630] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(201,168,76,0.3)] hover:bg-[#111d3a]">
+    <div className="group relative overflow-hidden rounded-md border border-[rgba(201,168,76,0.12)] bg-[#0d1630] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(201,168,76,0.3)] hover:bg-[#111d3a]">
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[rgba(201,168,76,0.35)] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <span className="font-display mb-3 block text-[2.8rem] font-light leading-none text-[rgba(201,168,76,0.25)] transition-colors duration-300 group-hover:text-[rgba(201,168,76,0.45)]">
@@ -262,7 +328,7 @@ function ModuleCard({ number, title, description }: ModuleCardProps) {
 function SyllabusSection() {
   return (
     <section id="syllabus" className="bg-[#080e1f] py-[clamp(4rem,8vw,8rem)]">
-      <div className="mx-auto max-w-[1100px] px-6 md:px-12">
+      <div className="mx-auto max-w-350 px-6 md:px-12">
 
         <div className="mx-auto mb-14 max-w-[55ch] text-center">
           <span className="mb-3 block text-[0.7rem] font-medium tracking-[0.25em] uppercase text-[#c9a84c]">
@@ -272,8 +338,8 @@ function SyllabusSection() {
             Ementa do Curso
           </h2>
           <p className="text-[0.97rem] text-[#8a8fa8]">
-            Um percurso completo que une sabedoria bíblica e conhecimento
-            astrológico, organizado em seis módulos transformadores.
+            Seis etapas para redescobrir a Astrologia
+            e vivê-la com liberdade dentro da fé cristã.
           </p>
         </div>
 
@@ -298,17 +364,16 @@ function SyllabusSection() {
 function FinalCtaSection() {
   return (
     <section className="border-t border-[#c9a84c]/10 bg-linear-to-b from-[#080e1f] to-[#060d1c] py-[clamp(4rem,8vw,8rem)] text-center">
-      <div className="mx-auto max-w-[1100px] px-6 md:px-12">
-        <div className="mx-auto flex max-w-[600px] flex-col items-center gap-5">
+      <div className="mx-auto max-w-275 px-6 md:px-12">
+        <div className="mx-auto flex max-w-150 flex-col items-center gap-5">
           <p className="text-[0.8rem] tracking-[0.4em] text-[#c9a84c]/70" aria-hidden="true">
             ✦ ✧ ✦ ✧ ✦
           </p>
           <h2 className="font-display text-[clamp(1.9rem,4vw,3rem)] font-normal leading-[1.15] text-[#e8e4d8]">
             Pronto para iniciar sua jornada?
           </h2>
-          <p className="max-w-[48ch] text-[0.97rem] text-[#8a8fa8]">
-            Garanta sua vaga no Curso de Astrologia Cristã e descubra como os
-            astros falam sobre a sua história de fé.
+          <p className="max-w-[60ch] text-[0.97rem] text-[#8a8fa8]">
+            Inscreva-se e dê o primeiro passo para entender a Astrologia como ela realmente é: séria, profunda e compatível com sua fé.
           </p>
           <CtaButton
             label={courseInfo.ctaLabel}
