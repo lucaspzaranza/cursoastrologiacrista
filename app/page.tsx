@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Curso de Astrologia Cristã",
-  description: "Descubra como os astros revelam o plano de Deus para a sua vida",
+  description: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
 };
 
 // ─── COURSE DATA ──────────────────────────────────────────────────────────────
