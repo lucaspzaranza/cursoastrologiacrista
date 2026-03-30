@@ -24,6 +24,8 @@ const courseInfo = {
   subtitle: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
   ctaLabel: "Entre no grupo do WhatsApp",
   ctaUrl: "https://chat.whatsapp.com/IbIeq2g2Mc74N40XDYKWku?mode=gi_t",
+  price: "R$ 147",
+  installments: "ou em até 6x no cartão",
 };
 
 const instructor = {
@@ -90,9 +92,8 @@ interface ModuleCardProps {
 // ─── SHARED COMPONENTS ────────────────────────────────────────────────────────
 
 // ─── CTA BUTTON (SALES) ───────────────────────────────────────────────────────
-// Kept for when the Hotmart sales page is ready. Swap CtaButton for this one
-// and revert ctaUrl / ctaLabel in courseInfo.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// Active button — links to Hotmart sales page.
+// When ready: update courseInfoSales.ctaUrl with the Hotmart link.
 function CtaButtonSales({ label, href, size = "md" }: CtaButtonProps) {
   const baseClasses =
     "inline-flex items-center gap-2 bg-linear-to-br from-[#c9a84c] to-[#e8c96a] text-[#060d1c] font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.4)] hover:brightness-105";
@@ -113,13 +114,10 @@ function CtaButtonSales({ label, href, size = "md" }: CtaButtonProps) {
 }
 
 // ─── CTA BUTTON (WHATSAPP) ────────────────────────────────────────────────────
-
-function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
-  // ── Sales page button (restore when Hotmart link is ready) ────────────────
-  // const baseClasses =
-  //   "inline-flex items-center gap-2 bg-linear-to-br from-[#c9a84c] to-[#e8c96a] text-[#060d1c] font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(201,168,76,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(201,168,76,0.4)] hover:brightness-105";
-
-  // ── WhatsApp group button (temporary, while course is not live) ───────────
+// Kept for when reverting to WhatsApp group promotion.
+// To reactivate: uncomment CtaButton calls below and comment out CtaButtonSales.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function CtaWhatsAppButton({ label, href, size = "md" }: CtaButtonProps) {
   const baseClasses =
     "inline-flex items-center justify-center text-center gap-2 w-full sm:w-auto bg-[#25d366] text-white font-medium tracking-widest uppercase rounded-[4px] shadow-[0_4px_24px_rgba(37,211,102,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(37,211,102,0.45)] hover:brightness-105";
 
@@ -128,7 +126,6 @@ function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${sizeClasses} group`}>
-      {/* WhatsApp official SVG icon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -148,6 +145,25 @@ function CtaButton({ label, href, size = "md" }: CtaButtonProps) {
   );
 }
 
+// ─── PRICE DISPLAY ────────────────────────────────────────────────────────────
+
+interface PriceDisplayProps {
+  align?: "start" | "center";
+}
+
+function PriceDisplay({ align = "start" }: PriceDisplayProps) {
+  return (
+    <div className={`flex flex-col gap-1 ${align === "center" ? "items-center" : "items-start"}`}>
+      <span className="font-display text-[3.5rem] font-normal leading-none text-[#e8c96a]">
+        {courseInfo.price}
+      </span>
+      <span className="text-[0.9rem] font-light tracking-wide text-[#e8e4d8]/50">
+        {courseInfo.installments}
+      </span>
+    </div>
+  );
+}
+
 // ─── HERO SECTION ─────────────────────────────────────────────────────────────
 
 function HeroSection() {
@@ -159,7 +175,6 @@ function HeroSection() {
 
       {/* ── MOBILE: image fills width, text overlaid at the bottom ─────────── */}
       <div className="relative md:hidden">
-        {/* Portrait image — full width, natural aspect ratio, no crop */}
         <div className="relative aspect-2481/3561 w-full">
           <Image
             src="/hero.jpg"
@@ -169,11 +184,9 @@ function HeroSection() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          {/* Gradient starts only at the bottom 30% so more image shows */}
           <div className="absolute inset-x-0 bottom-0 h-[30%] bg-linear-to-t from-[#080e1f] via-[#080e1f]/85 to-transparent" />
         </div>
 
-        {/* Text block pulled up with negative margin to overlap the image bottom */}
         <div className="relative z-10 -mt-16 px-7 pb-10 pt-6">
           <p className="mb-4 text-[0.65rem] tracking-[0.3em] uppercase text-[#c9a84c]">
             ✦ Uma jornada de fé e conhecimento ✦
@@ -182,10 +195,16 @@ function HeroSection() {
             {courseInfo.title}
           </h1>
           <div className="mb-4 h-px w-10 bg-[#c9a84c] opacity-60" />
-          <p className="mb-7 text-[0.97rem] font-light leading-relaxed text-[#e8e4d8]/75">
+          <p className="mb-3 text-[0.97rem] font-light leading-relaxed text-[#e8e4d8]/75">
             {courseInfo.subtitle}
           </p>
-          <CtaButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+
+          <div className="animate-[fadeUp_0.8s_ease_0.8s_both] h-40 w-fit flex flex-col gap-y-4">
+            {/* WhatsApp button — uncomment when reverting to group promotion:   */}
+            <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+            {/* <PriceDisplay />
+            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
+          </div>
         </div>
       </div>
 
@@ -201,18 +220,18 @@ function HeroSection() {
             {courseInfo.title}
           </h1>
           <div className="mb-6 h-px w-14 animate-[fadeUp_0.8s_ease_0.5s_both] bg-[#c9a84c] opacity-60" />
-          <p className="mb-10 animate-[fadeUp_0.8s_ease_0.6s_both] max-w-[42ch] text-[clamp(1rem,1.4vw,1.15rem)] font-light leading-relaxed text-[#e8e4d8]/75">
+          <p className="mb-4 animate-[fadeUp_0.8s_ease_0.6s_both] max-w-[42ch] text-[clamp(1rem,1.4vw,1.15rem)] font-light leading-relaxed text-[#e8e4d8]/75">
             {courseInfo.subtitle}
           </p>
-          <div className="animate-[fadeUp_0.8s_ease_0.8s_both]">
-            <CtaButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+          <div className="animate-[fadeUp_0.8s_ease_0.8s_both] h-40 w-fit flex flex-col gap-y-4">
+            {/* WhatsApp button — uncomment when reverting to group promotion: */}
+            <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+            {/* <PriceDisplay />
+            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
           </div>
         </div>
 
-        {/* RIGHT: portrait image
-            The image wrapper starts at top-20 (80px down), clipping the top of
-            the image while keeping its left-anchored horizontal position.      */}
-        {/* overflow-hidden clips the 120% tall inner div, preventing bleed into the next section */}
+        {/* RIGHT: portrait image */}
         <div className="relative h-full overflow-hidden">
           <div className="relative h-[120%] bottom-36">
             <Image
@@ -224,9 +243,7 @@ function HeroSection() {
               className="object-cover object-top-left"
             />
           </div>
-          {/* Narrow left fade — softens the seam between the two columns */}
           <div className="absolute inset-y-0 left-0 w-16 bg-linear-to-r from-[#080e1f] to-transparent" />
-          {/* Bottom fade into next section */}
           <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#080e1f] to-transparent" />
         </div>
 
@@ -272,7 +289,6 @@ function InstructorSection() {
             </h2>
             <div className="mb-6 h-px w-12 bg-[#c9a84c] opacity-60" />
             {bioParagraphs.map((paragraph, index) => {
-              // Render the first paragraph with the Zazastro link inline
               if (index === 0) {
                 const [before, after] = paragraph.split("zazastro.com.br), ");
                 return (
@@ -310,7 +326,6 @@ function ModuleCard({ number, title, description }: ModuleCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-md border border-[rgba(201,168,76,0.12)] bg-[#0d1630] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(201,168,76,0.3)] hover:bg-[#111d3a]">
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[rgba(201,168,76,0.35)] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
       <span className="font-display mb-3 block text-[2.8rem] font-light leading-none text-[rgba(201,168,76,0.25)] transition-colors duration-300 group-hover:text-[rgba(201,168,76,0.45)]">
         {number}
       </span>
@@ -330,7 +345,6 @@ function SyllabusSection() {
   return (
     <section id="syllabus" className="bg-[#080e1f] py-[clamp(4rem,8vw,8rem)]">
       <div className="mx-auto max-w-350 px-6 md:px-12">
-
         <div className="mx-auto mb-14 max-w-[55ch] text-center">
           <span className="mb-3 block text-[0.7rem] font-medium tracking-[0.25em] uppercase text-[#c9a84c]">
             O que você vai aprender
@@ -343,7 +357,6 @@ function SyllabusSection() {
             e vivê-la com liberdade dentro da fé cristã.
           </p>
         </div>
-
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {modules.map((module) => (
             <ModuleCard
@@ -354,7 +367,6 @@ function SyllabusSection() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -376,11 +388,10 @@ function FinalCtaSection() {
           <p className="max-w-[60ch] text-[0.97rem] text-[#8a8fa8]">
             Inscreva-se e dê o primeiro passo para entender a Astrologia como ela realmente é: séria, profunda e compatível com sua fé.
           </p>
-          <CtaButton
-            label={courseInfo.ctaLabel}
-            href={courseInfo.ctaUrl}
-            size="lg"
-          />
+          {/* WhatsApp button — uncomment when reverting to group promotion:   */}
+          <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+          {/* <PriceDisplay align="center" />
+          <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
         </div>
       </div>
     </section>
