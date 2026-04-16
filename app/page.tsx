@@ -16,7 +16,7 @@ const courseInfoSales = {
   title: "Curso de Astrologia Cristã",
   subtitle: "A Astrologia que a modernidade distorceu — restaurada à luz da fé.",
   ctaLabel: "Faça a sua inscrição",
-  ctaUrl: "https://sua-pagina-de-vendas.com", // ← replace with Hotmart URL when ready
+  ctaUrl: "https://pay.hotmart.com/C105405966S?bid=1776379372845", // ← replace with Hotmart URL when ready
 };
 
 const courseInfo = {
@@ -25,7 +25,7 @@ const courseInfo = {
   ctaLabel: "Entre no grupo do WhatsApp",
   ctaUrl: "https://chat.whatsapp.com/IbIeq2g2Mc74N40XDYKWku?mode=gi_t",
   price: "R$ 147",
-  installments: "ou em até 6x no cartão",
+  installments: "ou em até 3x no cartão",
 };
 
 const instructor = {
@@ -45,7 +45,7 @@ const modules = [
   },
   {
     number: "02",
-    title: "Mecânica Celeste",
+    title: "Mecânica Básica Celeste",
     description:
       "Entenda o modelo cosmológico das esferas, os sete planetas tradicionais, o Zodíaco, as 12 casas, as estrelas fixas e os aspectos. Uma imersão visual e conceitual na arquitetura do céu, com recursos em 2D e 3D para tornar o abstrato concreto.",
   },
@@ -201,9 +201,9 @@ function HeroSection() {
 
           <div className="animate-[fadeUp_0.8s_ease_0.8s_both] h-40 w-fit flex flex-col gap-y-4">
             {/* WhatsApp button — uncomment when reverting to group promotion:   */}
-            <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
-            {/* <PriceDisplay />
-            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
+            {/* <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" /> */}
+            {/* <PriceDisplay /> */}
+            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" />
           </div>
         </div>
       </div>
@@ -225,9 +225,9 @@ function HeroSection() {
           </p>
           <div className="animate-[fadeUp_0.8s_ease_0.8s_both] h-40 w-fit flex flex-col gap-y-4">
             {/* WhatsApp button — uncomment when reverting to group promotion: */}
-            <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
-            {/* <PriceDisplay />
-            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
+            {/* <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" /> */}
+            {/* <PriceDisplay /> */}
+            <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" />
           </div>
         </div>
 
@@ -389,9 +389,9 @@ function FinalCtaSection() {
             Inscreva-se e dê o primeiro passo para entender a Astrologia como ela realmente é: séria, profunda e compatível com sua fé.
           </p>
           {/* WhatsApp button — uncomment when reverting to group promotion:   */}
-          <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
-          {/* <PriceDisplay align="center" />
-          <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" /> */}
+          {/* <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" /> */}
+          <PriceDisplay align="center" />
+          <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" />
         </div>
       </div>
     </section>
