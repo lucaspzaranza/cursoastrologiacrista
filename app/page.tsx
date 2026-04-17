@@ -224,9 +224,8 @@ function HeroSection() {
             {courseInfo.subtitle}
           </p>
           <div className="animate-[fadeUp_0.8s_ease_0.8s_both] h-40 w-fit flex flex-col gap-y-4">
-            {/* WhatsApp button — uncomment when reverting to group promotion: */}
-            {/* <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" /> */}
-            {/* <PriceDisplay /> */}
+            {/* <CtaWhatsAppButton label={courseInfo.ctaLabel} href={courseInfo.ctaUrl} size="lg" />
+            <PriceDisplay /> */}
             <CtaButtonSales label={courseInfoSales.ctaLabel} href={courseInfoSales.ctaUrl} size="lg" />
           </div>
         </div>
